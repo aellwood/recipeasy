@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import createAuth0Client from '@auth0/auth0-spa-js';
 import Auth0Client from '@auth0/auth0-spa-js/dist/typings/Auth0Client';
-//import * as config from '../../../auth_config.json';
 import {
   from,
   of,
@@ -22,6 +21,7 @@ export class AuthService {
     createAuth0Client({
       domain: 'dev-1-ud71vi.eu.auth0.com',
       client_id: 'YYPZPSZP0a6yzFcPD6d2V3J5rahuU0is',
+      audience: 'https://recipeasy-api.com',
       redirect_uri: `${window.location.origin}/callback`
     })
   ) as Observable<Auth0Client>).pipe(
@@ -129,5 +129,11 @@ export class AuthService {
         returnTo: `${window.location.origin}`
       });
     });
+  }
+
+  getTokenSilently$(options?): Observable<string> {
+    return this.auth0Client$.pipe(
+      concatMap((client: Auth0Client) => from(client.getTokenSilently(options)))
+    );
   }
 }
