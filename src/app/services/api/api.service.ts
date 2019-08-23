@@ -17,4 +17,11 @@ export class ApiService {
   getRecipes(): Observable<any> {
     return this.http.get('https://recipeasy-api.azurewebsites.net/api/recipes');
   }
+
+  postRecipe(body: any): Observable<any> {
+    return this.http.post(
+      'https://recipeasy-api.azurewebsites.net/api/recipes',
+      body
+    );
+  }
 }

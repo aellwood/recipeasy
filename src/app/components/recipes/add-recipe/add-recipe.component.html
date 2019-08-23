@@ -1,1 +1,33 @@
-<p>add-recipe works!</p>
+<div class="col">
+  <form [formGroup]="form" (ngSubmit)="submitHandler()">
+    <div class="col">
+      <div class="row">
+        <p>Recipe Name</p>
+        <input formControlName="recipeName" />
+      </div>
+      <div class="row">
+        <p>Ingredients</p>
+      </div>
+      <div class="row" formArrayName="ingredients">
+        <div
+          *ngFor="let ingredient of ingredientForms.controls; let i = index"
+          [formGroupName]="i"
+          class="row"
+        >
+          <input formControlName="ingredient" />
+          <button type="button" class="btn-danger" (click)="deleteIngredient()">
+            Delete
+          </button>
+        </div>
+        <button type="button" class="btn-primary" (click)="addIngredient()">
+          Add Ingredient
+        </button>
+      </div>
+      <div class="row">
+        <p>Notes</p>
+        <input formControlName="notes" />
+      </div>
+    </div>
+    <button type="submit">Submit Form</button>
+  </form>
+</div>

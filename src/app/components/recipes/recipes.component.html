@@ -1,4 +1,4 @@
-<div *ngIf="responseJson">
+<div class="col" *ngIf="responseJson">
   <app-recipe
     *ngFor="let recipe of responseJson"
     [recipeName]="recipe.recipeName"
@@ -7,5 +7,5 @@
   >
   </app-recipe>
   <button (click)="showAddRecipe = !showAddRecipe">Add Recipe</button>
-  <app-add-recipe *ngIf="showAddRecipe">Hi</app-add-recipe>
+  <app-add-recipe *ngIf="showAddRecipe"></app-add-recipe>
 </div>

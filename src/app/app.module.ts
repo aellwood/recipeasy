@@ -11,6 +11,7 @@ import { ExternalApiComponent } from './components/external-api/external-api.com
 import { RecipesComponent } from './components/recipes/recipes.component';
 import { RecipeComponent } from './components/recipes/recipe/recipe.component';
 import { AddRecipeComponent } from './components/recipes/add-recipe/add-recipe.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,12 @@ import { AddRecipeComponent } from './components/recipes/add-recipe/add-recipe.c
     RecipeComponent,
     AddRecipeComponent
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    ReactiveFormsModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
