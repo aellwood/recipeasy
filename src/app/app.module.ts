@@ -8,6 +8,9 @@ import { CallbackComponent } from './components/callback/callback.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ExternalApiComponent } from './components/external-api/external-api.component';
+import { RecipesComponent } from './components/recipes/recipes.component';
+import { RecipeComponent } from './components/recipes/recipe/recipe.component';
+import { AddRecipeComponent } from './components/recipes/add-recipe/add-recipe.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +18,10 @@ import { ExternalApiComponent } from './components/external-api/external-api.com
     NavbarComponent,
     CallbackComponent,
     ProfileComponent,
-    ExternalApiComponent
+    ExternalApiComponent,
+    RecipesComponent,
+    RecipeComponent,
+    AddRecipeComponent
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],

@@ -6,6 +6,7 @@ import { AuthGuard } from './auth-guard/auth.guard';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { InterceptorService } from './services/interceptor/interceptor.service';
 import { ExternalApiComponent } from './components/external-api/external-api.component';
+import { RecipesComponent } from './components/recipes/recipes.component';
 
 const routes: Routes = [
   {
@@ -20,6 +21,11 @@ const routes: Routes = [
   {
     path: 'external-api',
     component: ExternalApiComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'recipes',
+    component: RecipesComponent,
     canActivate: [AuthGuard]
   }
 ];

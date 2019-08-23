@@ -1,0 +1,11 @@
+<div *ngIf="responseJson">
+  <app-recipe
+    *ngFor="let recipe of responseJson"
+    [recipeName]="recipe.recipeName"
+    [ingredients]="recipe.ingredients"
+    [notes]="recipe.notes"
+  >
+  </app-recipe>
+  <button (click)="showAddRecipe = !showAddRecipe">Add Recipe</button>
+  <app-add-recipe *ngIf="showAddRecipe">Hi</app-add-recipe>
+</div>

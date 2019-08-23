@@ -13,4 +13,8 @@ export class ApiService {
       'https://recipeasy-api.azurewebsites.net/api/values/testGet'
     );
   }
+
+  getRecipes(): Observable<any> {
+    return this.http.get('https://recipeasy-api.azurewebsites.net/api/recipes');
+  }
 }
