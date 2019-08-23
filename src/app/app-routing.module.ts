@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { CallbackComponent } from './callback/callback.component';
-import { ProfileComponent } from './profile/profile.component';
-import { AuthGuard } from './auth.guard';
+import { CallbackComponent } from './components/callback/callback.component';
+import { ProfileComponent } from './components/profile/profile.component';
+import { AuthGuard } from './auth-guard/auth.guard';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
-import { InterceptorService } from './interceptor/interceptor.service';
-import { ExternalApiComponent } from './external-api/external-api.component';
+import { InterceptorService } from './services/interceptor/interceptor.service';
+import { ExternalApiComponent } from './components/external-api/external-api.component';
 
 const routes: Routes = [
   {
