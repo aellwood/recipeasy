@@ -9,14 +9,23 @@ import { Subscription } from 'rxjs';
 })
 export class RecipesComponent implements OnInit {
   responseJson: string;
-  sub: Subscription;
   showAddRecipe: boolean = false;
+  sub: Subscription;
 
-  constructor(private api: ApiService) {}
+  constructor(private api: ApiService) { }
 
   ngOnInit() {
+    this.getRecipes();
+  }
+
+  getRecipes() {
     this.sub = this.api
       .getRecipes()
       .subscribe(res => (this.responseJson = res));
+  }
+
+  recipeAdded() {
+    this.getRecipes();
+    this.showAddRecipe = !this.showAddRecipe;
   }
 }

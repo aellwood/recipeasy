@@ -1,33 +1,31 @@
-<div class="col">
+<div>
   <form [formGroup]="form" (ngSubmit)="submitHandler()">
-    <div class="col">
-      <div class="row">
-        <p>Recipe Name</p>
-        <input formControlName="recipeName" />
-      </div>
-      <div class="row">
-        <p>Ingredients</p>
-      </div>
-      <div class="row" formArrayName="ingredients">
-        <div
-          *ngFor="let ingredient of ingredientForms.controls; let i = index"
-          [formGroupName]="i"
-          class="row"
-        >
-          <input formControlName="ingredient" />
-          <button type="button" class="btn-danger" (click)="deleteIngredient()">
+    <div>
+      <mat-form-field>
+        <input placeholder="Recipe Name" formControlName="recipeName" />
+      </mat-form-field>
+      <div formArrayName="ingredients">
+        <div *ngFor="let ingredient of ingredientForms.controls; let i=index" [formGroupName]="i">
+          <mat-form-field>
+            <input matinput placeholder="Ingredient Name" formControlName="ingredientName" />
+          </mat-form-field>
+          <mat-form-field>
+            <input matinput placeholder="Quantity" type="number" formControlName="quantity" />
+          </mat-form-field>
+          <button type="button" mat-raised-button color="warn" (click)="deleteIngredient()">
             Delete
           </button>
         </div>
-        <button type="button" class="btn-primary" (click)="addIngredient()">
-          Add Ingredient
-        </button>
       </div>
-      <div class="row">
-        <p>Notes</p>
-        <input formControlName="notes" />
+      <button type="button" mat-raised-button color="primary" (click)="addIngredient()">
+        Add Ingredient
+      </button>
+      <div>
+        <mat-form-field>
+          <input matinput placeholder="Notes" formControlName="notes" />
+        </mat-form-field>
       </div>
     </div>
-    <button type="submit">Submit Form</button>
+    <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid">Submit Form</button>
   </form>
 </div>

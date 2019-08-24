@@ -45,7 +45,7 @@ export class AuthService {
   // Create a local property for login status
   loggedIn: boolean = null;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router) { }
 
   // When calling, options can be passed if desired
   // https://auth0.github.io/auth0-spa-js/classes/auth0client.html#getuser
@@ -103,7 +103,7 @@ export class AuthService {
       tap(cbRes => {
         // Get and set target redirect route from callback results
         targetRoute =
-          cbRes.appState && cbRes.appState.target ? cbRes.appState.target : '/';
+          cbRes.appState && cbRes.appState.target ? '/recipes' : '/recipes';
       }),
       concatMap(() => {
         // Redirect callback complete; get user and login status
