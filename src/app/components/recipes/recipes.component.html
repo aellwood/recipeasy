@@ -1,9 +1,22 @@
-<div class="col" *ngIf="responseJson">
+<div *ngIf="responseJson">
   <h2>See below your stored recipes:</h2>
-  <app-recipe *ngFor="let recipe of responseJson" [recipeName]="recipe.recipeName" [ingredients]="recipe.ingredients"
-    [notes]="recipe.notes">
+  <app-recipe
+    *ngFor="let recipe of responseJson"
+    [recipeName]="recipe.recipeName"
+    [ingredients]="recipe.ingredients"
+    [notes]="recipe.notes"
+  >
   </app-recipe>
   <h2>To add new recipe:</h2>
-  <button mat-raised-button color="primary" (click)="showAddRecipe = !showAddRecipe">Add Recipe</button>
-  <app-add-recipe *ngIf="showAddRecipe" (recipeAdded)="recipeAdded()"></app-add-recipe>
+  <button
+    mat-raised-button
+    color="primary"
+    (click)="showAddRecipe = !showAddRecipe"
+  >
+    Add Recipe
+  </button>
+  <app-add-recipe
+    *ngIf="showAddRecipe"
+    (recipeAdded)="recipeAdded()"
+  ></app-add-recipe>
 </div>

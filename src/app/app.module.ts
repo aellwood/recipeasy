@@ -20,6 +20,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatChipsModule } from '@angular/material/chips';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     ExternalApiComponent,
     RecipesComponent,
     RecipeComponent,
-    AddRecipeComponent
+    AddRecipeComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
