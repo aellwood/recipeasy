@@ -1,5 +1,4 @@
 <div *ngIf="responseJson">
-  <h2>See below your stored recipes:</h2>
   <app-recipe
     *ngFor="let recipe of responseJson"
     [recipeName]="recipe.recipeName"
@@ -7,7 +6,6 @@
     [notes]="recipe.notes"
   >
   </app-recipe>
-  <h2>To add new recipe:</h2>
   <button
     mat-raised-button
     color="primary"

@@ -1,8 +1,39 @@
-<header>
-  <button mat-raised-button color="primary" (click)="auth.login()" *ngIf="!auth.loggedIn">Log In</button>
-  <button mat-raised-button color="warn" (click)="auth.logout()" *ngIf="auth.loggedIn">Log Out</button>
-  <button mat-raised-button color="primary" routerLink="/">Home</button>
+<div class="navbar-root">
+  <button
+    class="navbar-root__button"
+    mat-raised-button
+    color="primary"
+    routerLink="/"
+  >
+    Home
+  </button>
   <!-- <a routerLink="profile" *ngIf="auth.loggedIn">Profile</a>
-  <a routerLink="external-api" *ngIf="auth.loggedIn">External API</a> -->
-  <button mat-raised-button color="primary" routerLink="recipes" *ngIf="auth.loggedIn">Recipes</button>
-</header>
+    <a routerLink="external-api" *ngIf="auth.loggedIn">External API</a> -->
+  <button
+    class="navbar-root__button"
+    mat-raised-button
+    color="primary"
+    routerLink="recipes"
+    *ngIf="auth.loggedIn"
+  >
+    Recipes
+  </button>
+  <button
+    class="navbar-root__button"
+    mat-raised-button
+    color="primary"
+    (click)="auth.login()"
+    *ngIf="!auth.loggedIn"
+  >
+    Log In
+  </button>
+  <button
+    class="navbar-root__button"
+    mat-raised-button
+    color="primary"
+    (click)="auth.logout()"
+    *ngIf="auth.loggedIn"
+  >
+    Log Out
+  </button>
+</div>
