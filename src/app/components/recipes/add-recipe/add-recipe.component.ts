@@ -1,34 +1,34 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { FormGroup, FormBuilder, FormArray, Validators } from '@angular/forms';
-import { ApiService } from 'src/app/services/api/api.service';
+import { Component, OnInit, Output, EventEmitter } from "@angular/core";
+import { FormGroup, FormBuilder, FormArray, Validators } from "@angular/forms";
+import { ApiService } from "src/app/services/api/api.service";
 
 @Component({
-  selector: 'app-add-recipe',
-  templateUrl: './add-recipe.component.html',
-  styleUrls: ['./add-recipe.component.css']
+  selector: "app-add-recipe",
+  templateUrl: "./add-recipe.component.html",
+  styleUrls: ["./add-recipe.component.scss"],
 })
 export class AddRecipeComponent implements OnInit {
   @Output() recipeAdded = new EventEmitter();
   form: FormGroup;
 
-  constructor(private fb: FormBuilder, private api: ApiService) { }
+  constructor(private fb: FormBuilder, private api: ApiService) {}
 
   ngOnInit() {
     this.form = this.fb.group({
-      recipeName: ['', [Validators.required]],
+      recipeName: ["", [Validators.required]],
       ingredients: this.fb.array([]),
-      notes: ''
+      notes: "",
     });
   }
 
   get ingredientForms() {
-    return this.form.get('ingredients') as FormArray;
+    return this.form.get("ingredients") as FormArray;
   }
 
   addIngredient() {
     const ingredient = this.fb.group({
-      ingredientName: ['', [Validators.required]],
-      quantity: ['', [Validators.pattern("^[0-9]*$")]]
+      ingredientName: ["", [Validators.required]],
+      quantity: ["", [Validators.pattern("^[0-9]*$")]],
     });
 
     this.ingredientForms.push(ingredient);
@@ -39,6 +39,8 @@ export class AddRecipeComponent implements OnInit {
   }
 
   async submitHandler() {
-    this.api.postRecipe(this.form.value).subscribe(() => this.recipeAdded.emit());
+    this.api
+      .postRecipe(this.form.value)
+      .subscribe(() => this.recipeAdded.emit());
   }
 }

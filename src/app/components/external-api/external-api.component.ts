@@ -1,11 +1,11 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
-import { ApiService } from '../../services/api/api.service';
-import { Subscription } from 'rxjs';
+import { Component, OnInit, OnDestroy } from "@angular/core";
+import { ApiService } from "../../services/api/api.service";
+import { Subscription } from "rxjs";
 
 @Component({
-  selector: 'app-external-api',
-  templateUrl: './external-api.component.html',
-  styleUrls: ['./external-api.component.css']
+  selector: "app-external-api",
+  templateUrl: "./external-api.component.html",
+  styleUrls: ["./external-api.component.scss"],
 })
 export class ExternalApiComponent implements OnInit, OnDestroy {
   responseJson: string;
@@ -16,7 +16,9 @@ export class ExternalApiComponent implements OnInit, OnDestroy {
   ngOnInit() {}
 
   pingApi() {
-    this.pingSub = this.api.ping$().subscribe(res => (this.responseJson = res));
+    this.pingSub = this.api
+      .ping$()
+      .subscribe((res) => (this.responseJson = res));
   }
 
   ngOnDestroy() {

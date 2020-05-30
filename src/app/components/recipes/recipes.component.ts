@@ -1,18 +1,18 @@
-import { Component, OnInit } from '@angular/core';
-import { ApiService } from 'src/app/services/api/api.service';
-import { Subscription } from 'rxjs';
+import { Component, OnInit } from "@angular/core";
+import { ApiService } from "src/app/services/api/api.service";
+import { Subscription } from "rxjs";
 
 @Component({
-  selector: 'app-recipes',
-  templateUrl: './recipes.component.html',
-  styleUrls: ['./recipes.component.css']
+  selector: "app-recipes",
+  templateUrl: "./recipes.component.html",
+  styleUrls: ["./recipes.component.scss"],
 })
 export class RecipesComponent implements OnInit {
   responseJson: string;
   showAddRecipe: boolean = false;
   sub: Subscription;
 
-  constructor(private api: ApiService) { }
+  constructor(private api: ApiService) {}
 
   ngOnInit() {
     this.getRecipes();
@@ -21,7 +21,7 @@ export class RecipesComponent implements OnInit {
   getRecipes() {
     this.sub = this.api
       .getRecipes()
-      .subscribe(res => (this.responseJson = res));
+      .subscribe((res) => (this.responseJson = res));
   }
 
   recipeAdded() {
