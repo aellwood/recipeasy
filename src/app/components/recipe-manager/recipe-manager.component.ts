@@ -41,4 +41,9 @@ export class RecipeManagerComponent implements OnInit {
     this.selectedRecipe = null;
     this.newRecipe = true;
   }
+
+  recipeDeleted(recipe: Recipe) {
+    this.selectedRecipe = null;
+    this.recipes = this.recipes.filter((x) => x.recipeId !== recipe.recipeId);
+  }
 }

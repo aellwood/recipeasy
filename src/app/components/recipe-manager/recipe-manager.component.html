@@ -25,7 +25,10 @@
   </div>
 
   <div class="recipe-manager__details" *ngIf="selectedRecipe != null">
-    <app-recipe-details [recipe]="selectedRecipe"></app-recipe-details>
+    <app-recipe-details
+      [recipe]="selectedRecipe"
+      (recipeDeleted)="recipeDeleted($event)"
+    ></app-recipe-details>
   </div>
   <div class="recipe-manager__adder" *ngIf="newRecipe">
     <app-add-recipe (recipeAdded)="recipeAdded($event)"> </app-add-recipe>
