@@ -26,9 +26,10 @@ export class RecipeManagerComponent implements OnInit {
     });
   }
 
-  recipeAdded() {
-    this.getRecipes();
+  recipeAdded(recipe: Recipe) {
     this.newRecipe = false;
+    this.recipes.push(recipe);
+    this.selectedRecipe = recipe;
   }
 
   setSelectedRecipeId(id: string) {

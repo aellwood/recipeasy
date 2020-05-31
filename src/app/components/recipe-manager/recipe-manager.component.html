@@ -28,6 +28,6 @@
     <app-recipe-details [recipe]="selectedRecipe"></app-recipe-details>
   </div>
   <div class="recipe-manager__adder" *ngIf="newRecipe">
-    <app-add-recipe (recipeAdded)="recipeAdded()"> </app-add-recipe>
+    <app-add-recipe (recipeAdded)="recipeAdded($event)"> </app-add-recipe>
   </div>
 </div>

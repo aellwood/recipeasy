@@ -1,6 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from "@angular/core";
 import { FormGroup, FormBuilder, FormArray, Validators } from "@angular/forms";
 import { ApiService } from "src/app/services/api/api.service";
+import { Recipe } from "src/app/models/recipe";
 
 @Component({
   selector: "app-add-recipe",
@@ -8,7 +9,7 @@ import { ApiService } from "src/app/services/api/api.service";
   styleUrls: ["./add-recipe.component.scss"],
 })
 export class AddRecipeComponent implements OnInit {
-  @Output() recipeAdded = new EventEmitter();
+  @Output() recipeAdded = new EventEmitter<Recipe>();
   form: FormGroup;
 
   constructor(private fb: FormBuilder, private api: ApiService) {}
@@ -41,6 +42,6 @@ export class AddRecipeComponent implements OnInit {
   async submitHandler() {
     this.api
       .postRecipe(this.form.value)
-      .subscribe(() => this.recipeAdded.emit());
+      .subscribe((res: Recipe) => this.recipeAdded.emit(res));
   }
 }
