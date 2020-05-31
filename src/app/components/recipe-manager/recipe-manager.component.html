@@ -1,12 +1,4 @@
 <div class="recipe-manager">
-  <!-- <app-recipe
-      *ngFor="let recipe of responseJson"
-      [recipeName]="recipe.recipeName"
-      [ingredients]="recipe.ingredients"
-      [notes]="recipe.notes"
-    >
-    </app-recipe> -->
-
   <div class="recipe-manager__picker">
     <div *ngIf="recipes; else loadingSpinner">
       <app-recipe-name
@@ -17,7 +9,6 @@
         (updateSelectedRecipe)="setSelectedRecipeId($event)"
       >
       </app-recipe-name>
-      <!-- add new recipe comp -->
     </div>
     <ng-template #loadingSpinner>
       <app-loading-spinner></app-loading-spinner>
