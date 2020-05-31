@@ -10,6 +10,7 @@ import { Recipe } from "src/app/models/recipe";
 })
 export class RecipeManagerComponent implements OnInit {
   recipes: Recipe[] = null;
+  gotRecipes = false;
   sub: Subscription;
   selectedRecipe: Recipe;
   newRecipe = false;
@@ -22,6 +23,7 @@ export class RecipeManagerComponent implements OnInit {
 
   getRecipes() {
     this.sub = this.api.getRecipes().subscribe((res: Recipe[]) => {
+      this.gotRecipes = true;
       this.recipes = res;
     });
   }

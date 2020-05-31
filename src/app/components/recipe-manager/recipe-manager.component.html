@@ -1,6 +1,6 @@
 <div class="recipe-manager">
   <div class="recipe-manager__picker">
-    <div *ngIf="recipes; else loadingSpinner">
+    <div *ngIf="gotRecipes; else loadingSpinner">
       <app-recipe-name
         *ngFor="let recipe of recipes"
         [recipeName]="recipe.recipeName"
