@@ -2,22 +2,48 @@
   <form [formGroup]="form" (ngSubmit)="submitHandler()">
     <div>
       <mat-form-field>
-        <input matInput placeholder="Recipe Name" formControlName="recipeName" />
+        <input
+          matInput
+          placeholder="Recipe Name"
+          formControlName="recipeName"
+        />
       </mat-form-field>
       <div formArrayName="ingredients">
-        <div *ngFor="let ingredient of ingredientForms.controls; let i=index" [formGroupName]="i">
+        <div
+          *ngFor="let ingredient of ingredientForms.controls; let i = index"
+          [formGroupName]="i"
+        >
           <mat-form-field>
-            <input matInput placeholder="Ingredient Name" formControlName="ingredientName" />
+            <input
+              matInput
+              placeholder="Ingredient Name"
+              formControlName="ingredientName"
+            />
           </mat-form-field>
           <mat-form-field>
-            <input matInput placeholder="Quantity" type="number" formControlName="quantity" />
+            <input
+              matInput
+              placeholder="Quantity"
+              type="number"
+              formControlName="quantity"
+            />
           </mat-form-field>
-          <button type="button" mat-raised-button color="warn" (click)="deleteIngredient(i)">
+          <button
+            type="button"
+            mat-raised-button
+            color="warn"
+            (click)="deleteIngredient(i)"
+          >
             Delete
           </button>
         </div>
       </div>
-      <button type="button" mat-raised-button color="accent" (click)="addIngredient()">
+      <button
+        type="button"
+        mat-raised-button
+        color="accent"
+        (click)="addIngredient()"
+      >
         Add Ingredient
       </button>
       <div>
@@ -26,6 +52,14 @@
         </mat-form-field>
       </div>
     </div>
-    <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid">Submit Form</button>
+    <button
+      mat-raised-button
+      color="primary"
+      type="submit"
+      [disabled]="form.invalid"
+    >
+      Submit Form
+    </button>
   </form>
+  <app-loading-spinner *ngIf="loading"></app-loading-spinner>
 </div>

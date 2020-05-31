@@ -11,6 +11,7 @@ import { Recipe } from "src/app/models/recipe";
 export class AddRecipeComponent implements OnInit {
   @Output() recipeAdded = new EventEmitter<Recipe>();
   form: FormGroup;
+  loading = false;
 
   constructor(private fb: FormBuilder, private api: ApiService) {}
 
@@ -40,8 +41,10 @@ export class AddRecipeComponent implements OnInit {
   }
 
   async submitHandler() {
-    this.api
-      .postRecipe(this.form.value)
-      .subscribe((res: Recipe) => this.recipeAdded.emit(res));
+    this.loading = true;
+    this.api.postRecipe(this.form.value).subscribe((res: Recipe) => {
+      this.loading = false;
+      this.recipeAdded.emit(res);
+    });
   }
 }
