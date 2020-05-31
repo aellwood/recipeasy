@@ -1,20 +1,25 @@
-<div *ngIf="responseJson">
-  <app-recipe
-    *ngFor="let recipe of responseJson"
-    [recipeName]="recipe.recipeName"
-    [ingredients]="recipe.ingredients"
-    [notes]="recipe.notes"
-  >
-  </app-recipe>
-  <button
-    mat-raised-button
-    color="primary"
-    (click)="showAddRecipe = !showAddRecipe"
-  >
-    Add Recipe
-  </button>
-  <app-add-recipe
-    *ngIf="showAddRecipe"
-    (recipeAdded)="recipeAdded()"
-  ></app-add-recipe>
+<div>
+  <div *ngIf="responseJson; else loadingSpinner">
+    <app-recipe
+      *ngFor="let recipe of responseJson"
+      [recipeName]="recipe.recipeName"
+      [ingredients]="recipe.ingredients"
+      [notes]="recipe.notes"
+    >
+    </app-recipe>
+    <button
+      mat-raised-button
+      color="primary"
+      (click)="showAddRecipe = !showAddRecipe"
+    >
+      Add Recipe
+    </button>
+    <app-add-recipe
+      *ngIf="showAddRecipe"
+      (recipeAdded)="recipeAdded()"
+    ></app-add-recipe>
+  </div>
+  <ng-template #loadingSpinner>
+    <app-loading-spinner></app-loading-spinner>
+  </ng-template>
 </div>
