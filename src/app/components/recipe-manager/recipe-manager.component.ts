@@ -3,11 +3,11 @@ import { ApiService } from "src/app/services/api/api.service";
 import { Subscription } from "rxjs";
 
 @Component({
-  selector: "app-recipes",
-  templateUrl: "./recipes.component.html",
-  styleUrls: ["./recipes.component.scss"],
+  selector: "app-recipe-manager",
+  templateUrl: "./recipe-manager.component.html",
+  styleUrls: ["./recipe-manager.component.scss"],
 })
-export class RecipesComponent implements OnInit {
+export class RecipeManagerComponent implements OnInit {
   responseJson: string;
   showAddRecipe: boolean = false;
   sub: Subscription;

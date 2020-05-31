@@ -8,7 +8,7 @@ import { CallbackComponent } from "./components/callback/callback.component";
 import { ProfileComponent } from "./components/profile/profile.component";
 import { HttpClientModule } from "@angular/common/http";
 import { ExternalApiComponent } from "./components/external-api/external-api.component";
-import { RecipesComponent } from "./components/recipes/recipes.component";
+import { RecipeManagerComponent } from "./components/recipe-manager/recipe-manager.component";
 import { RecipeComponent } from "./components/recipe/recipe.component";
 import { AddRecipeComponent } from "./components/add-recipe/add-recipe.component";
 import { ReactiveFormsModule } from "@angular/forms";
@@ -29,7 +29,7 @@ import { HeaderComponent } from "./components/header/header.component";
     CallbackComponent,
     ProfileComponent,
     ExternalApiComponent,
-    RecipesComponent,
+    RecipeManagerComponent,
     RecipeComponent,
     AddRecipeComponent,
     HeaderComponent,
