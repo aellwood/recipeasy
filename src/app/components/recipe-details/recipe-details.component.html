@@ -1,6 +1,9 @@
 <div class="recipe-details">
   <div class="recipe-details__header">
     <span>{{ recipe.recipeName }}</span>
+    <button mat-raised-button color="warn" (click)="deleteRecipe()">
+      Delete Recipe
+    </button>
   </div>
   <div class="recipe-details__body">
     <div class="recipe-details__body__ingredients">
