@@ -1,1 +1,18 @@
+.recipe-manager {
+  display: flex;
+  flex-direction: row;
 
+  border-top: 1px solid #c6c6c8;
+
+  &__picker {
+    // display: flex;
+    // flex-direction: column;
+    max-width: 320px;
+    width: 320px;
+    height: 100%;
+    border-right: 1px solid #c6c6c8;
+  }
+
+  &__details {
+  }
+}
