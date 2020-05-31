@@ -11,6 +11,7 @@ export class RecipeManagerComponent implements OnInit {
   responseJson: string;
   showAddRecipe: boolean = false;
   sub: Subscription;
+  selectedRecipeId: string;
 
   constructor(private api: ApiService) {}
 
@@ -27,5 +28,9 @@ export class RecipeManagerComponent implements OnInit {
   recipeAdded() {
     this.getRecipes();
     this.showAddRecipe = !this.showAddRecipe;
+  }
+
+  setSelectedRecipeId(id: string) {
+    this.selectedRecipeId = id;
   }
 }

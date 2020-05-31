@@ -2,4 +2,8 @@
   padding: 15px;
   background-color: white;
   margin: 10px;
+
+  &__selected {
+    background-color: rgba(120, 120, 128, 0.16);
+  }
 }

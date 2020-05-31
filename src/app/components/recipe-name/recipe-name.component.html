@@ -1,4 +1,8 @@
-<div class="recipe-name">
+<div
+  class="recipe-name"
+  [ngClass]="{ 'recipe-name__selected': recipeId === selectedRecipeId }"
+  (click)="updateSelected()"
+>
   <span>
     {{ recipeName }}
   </span>

@@ -12,6 +12,9 @@
       <app-recipe-name
         *ngFor="let recipe of responseJson"
         [recipeName]="recipe.recipeName"
+        [recipeId]="recipe.recipeId"
+        [selectedRecipeId]="selectedRecipeId"
+        (updateSelectedRecipe)="setSelectedRecipeId($event)"
       >
       </app-recipe-name>
       <!-- add new recipe comp -->
