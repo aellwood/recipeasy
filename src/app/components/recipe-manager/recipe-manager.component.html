@@ -8,17 +8,17 @@
     </app-recipe> -->
 
   <div class="recipe-manager__picker">
-    <!-- <div *ngIf="responseJson; else loadingSpinner"> -->
-    <app-recipe-name
-      *ngFor="let recipe of responseJson"
-      [recipeName]="recipe.recipeName"
-    >
-    </app-recipe-name>
-    <!-- add new recipe comp -->
-    <!-- </div> -->
-    <!-- <ng-template #loadingSpinner>
-        <app-loading-spinner></app-loading-spinner>
-      </ng-template> -->
+    <div *ngIf="responseJson; else loadingSpinner">
+      <app-recipe-name
+        *ngFor="let recipe of responseJson"
+        [recipeName]="recipe.recipeName"
+      >
+      </app-recipe-name>
+      <!-- add new recipe comp -->
+    </div>
+    <ng-template #loadingSpinner>
+      <app-loading-spinner></app-loading-spinner>
+    </ng-template>
   </div>
 
   <div class="recipe-manager__details">
