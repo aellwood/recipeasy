@@ -7,8 +7,13 @@ import { HTTP_INTERCEPTORS } from "@angular/common/http";
 import { InterceptorService } from "./services/interceptor/interceptor.service";
 import { ExternalApiComponent } from "./components/external-api/external-api.component";
 import { RecipeManagerComponent } from "./components/recipe-manager/recipe-manager.component";
+import { HomeComponent } from "./components/home/home.component";
 
 const routes: Routes = [
+  {
+    path: "",
+    component: HomeComponent,
+  },
   {
     path: "callback",
     component: CallbackComponent,

@@ -22,6 +22,7 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { HeaderComponent } from "./components/header/header.component";
 import { LoadingSpinnerComponent } from './components/loading-spinner/loading-spinner.component';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { LoadingSpinnerComponent } from './components/loading-spinner/loading-sp
     AddRecipeComponent,
     HeaderComponent,
     LoadingSpinnerComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
