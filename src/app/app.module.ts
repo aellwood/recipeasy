@@ -9,7 +9,6 @@ import { ProfileComponent } from "./components/profile/profile.component";
 import { HttpClientModule } from "@angular/common/http";
 import { ExternalApiComponent } from "./components/external-api/external-api.component";
 import { RecipeManagerComponent } from "./components/recipe-manager/recipe-manager.component";
-import { RecipeComponent } from "./components/recipe/recipe.component";
 import { AddRecipeComponent } from "./components/add-recipe/add-recipe.component";
 import { ReactiveFormsModule } from "@angular/forms";
 
@@ -21,10 +20,10 @@ import { MatChipsModule } from "@angular/material/chips";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { HeaderComponent } from "./components/header/header.component";
-import { LoadingSpinnerComponent } from './components/loading-spinner/loading-spinner.component';
-import { HomeComponent } from './components/home/home.component';
-import { RecipeNameComponent } from './components/recipe-name/recipe-name.component';
-import { RecipeDetailsComponent } from './components/recipe-details/recipe-details.component';
+import { LoadingSpinnerComponent } from "./components/loading-spinner/loading-spinner.component";
+import { HomeComponent } from "./components/home/home.component";
+import { RecipeNameComponent } from "./components/recipe-name/recipe-name.component";
+import { RecipeDetailsComponent } from "./components/recipe-details/recipe-details.component";
 
 @NgModule({
   declarations: [
@@ -34,7 +33,6 @@ import { RecipeDetailsComponent } from './components/recipe-details/recipe-detai
     ProfileComponent,
     ExternalApiComponent,
     RecipeManagerComponent,
-    RecipeComponent,
     AddRecipeComponent,
     HeaderComponent,
     LoadingSpinnerComponent,

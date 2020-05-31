@@ -1,1 +1,15 @@
-<span>recipe-details works!</span>
+<div class="recipe-details">
+  <div class="recipe-details__header">
+    <span>{{ recipe.recipeName }}</span>
+  </div>
+  <div class="recipe-details__body">
+    <div class="recipe-details__body__ingredients">
+      <ul *ngFor="let ingredient of recipe.ingredients">
+        <li>{{ ingredient.quantity }} {{ ingredient.ingredientName }}</li>
+      </ul>
+    </div>
+    <div class="recipe-details__body__method">
+      {{ recipe.notes }}
+    </div>
+  </div>
+</div>

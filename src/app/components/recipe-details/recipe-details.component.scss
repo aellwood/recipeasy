@@ -1,0 +1,12 @@
+.recipe-details {
+  margin: 10px;
+
+  &__header {
+    font-size: 24px;
+  }
+
+  &__body {
+    display: flex;
+    margin: 10px;
+  }
+}
