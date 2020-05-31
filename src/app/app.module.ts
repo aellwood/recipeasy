@@ -23,6 +23,8 @@ import { MatFormFieldModule } from "@angular/material/form-field";
 import { HeaderComponent } from "./components/header/header.component";
 import { LoadingSpinnerComponent } from './components/loading-spinner/loading-spinner.component';
 import { HomeComponent } from './components/home/home.component';
+import { RecipeNameComponent } from './components/recipe-name/recipe-name.component';
+import { RecipeDetailsComponent } from './components/recipe-details/recipe-details.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +39,8 @@ import { HomeComponent } from './components/home/home.component';
     HeaderComponent,
     LoadingSpinnerComponent,
     HomeComponent,
+    RecipeNameComponent,
+    RecipeDetailsComponent,
   ],
   imports: [
     BrowserModule,
