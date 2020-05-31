@@ -27,16 +27,7 @@
   <div class="recipe-manager__details" *ngIf="selectedRecipe != null">
     <app-recipe-details [recipe]="selectedRecipe"></app-recipe-details>
   </div>
-
-  <!-- <button
-      mat-raised-button
-      color="primary"
-      (click)="showAddRecipe = !showAddRecipe"
-    >
-      Add Recipe
-    </button>
-    <app-add-recipe
-      *ngIf="showAddRecipe"
-      (recipeAdded)="recipeAdded()"
-    ></app-add-recipe> -->
+  <div class="recipe-manager__adder" *ngIf="newRecipe">
+    <app-add-recipe (recipeAdded)="recipeAdded()"> </app-add-recipe>
+  </div>
 </div>

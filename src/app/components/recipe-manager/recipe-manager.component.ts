@@ -10,7 +10,6 @@ import { Recipe } from "src/app/models/recipe";
 })
 export class RecipeManagerComponent implements OnInit {
   recipes: Recipe[] = null;
-  showAddRecipe = false;
   sub: Subscription;
   selectedRecipe: Recipe;
   newRecipe = false;
@@ -29,7 +28,7 @@ export class RecipeManagerComponent implements OnInit {
 
   recipeAdded() {
     this.getRecipes();
-    this.showAddRecipe = !this.showAddRecipe;
+    this.newRecipe = false;
   }
 
   setSelectedRecipeId(id: string) {
