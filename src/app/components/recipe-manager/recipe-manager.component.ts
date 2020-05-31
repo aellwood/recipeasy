@@ -10,9 +10,10 @@ import { Recipe } from "src/app/models/recipe";
 })
 export class RecipeManagerComponent implements OnInit {
   recipes: Recipe[] = null;
-  showAddRecipe: boolean = false;
+  showAddRecipe = false;
   sub: Subscription;
   selectedRecipe: Recipe;
+  newRecipe = false;
 
   constructor(private api: ApiService) {}
 
@@ -32,6 +33,12 @@ export class RecipeManagerComponent implements OnInit {
   }
 
   setSelectedRecipeId(id: string) {
+    this.newRecipe = false;
     this.selectedRecipe = this.recipes.find((x) => x.recipeId === id);
+  }
+
+  createNewRecipe() {
+    this.selectedRecipe = null;
+    this.newRecipe = true;
   }
 }

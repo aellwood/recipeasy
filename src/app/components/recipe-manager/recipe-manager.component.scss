@@ -12,6 +12,17 @@
     height: 100%;
     border-right: 1px solid #c6c6c8;
     background-color: #f5f5fa;
+
+    &__new {
+      padding: 15px;
+      background-color: white;
+      margin: 30px 10px 10px;
+      font-weight: bold;
+
+      &__selected {
+        background-color: rgba(120, 120, 128, 0.16);
+      }
+    }
   }
 
   &__details {

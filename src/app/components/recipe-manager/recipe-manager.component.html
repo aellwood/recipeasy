@@ -9,17 +9,23 @@
         (updateSelectedRecipe)="setSelectedRecipeId($event)"
       >
       </app-recipe-name>
+      <div
+        class="recipe-manager__picker__new"
+        [ngClass]="{
+          'recipe-manager__picker__new__selected': newRecipe
+        }"
+        (click)="createNewRecipe()"
+      >
+        <span>Add new recipe</span>
+      </div>
     </div>
     <ng-template #loadingSpinner>
       <app-loading-spinner></app-loading-spinner>
     </ng-template>
   </div>
 
-  <div class="recipe-manager__details">
-    <app-recipe-details
-      *ngIf="selectedRecipe != null"
-      [recipe]="selectedRecipe"
-    ></app-recipe-details>
+  <div class="recipe-manager__details" *ngIf="selectedRecipe != null">
+    <app-recipe-details [recipe]="selectedRecipe"></app-recipe-details>
   </div>
 
   <!-- <button
