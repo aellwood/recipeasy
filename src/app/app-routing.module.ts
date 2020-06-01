@@ -5,7 +5,6 @@ import { ProfileComponent } from "./components/profile/profile.component";
 import { AuthGuard } from "./auth-guard/auth.guard";
 import { HTTP_INTERCEPTORS } from "@angular/common/http";
 import { InterceptorService } from "./services/interceptor/interceptor.service";
-import { ExternalApiComponent } from "./components/external-api/external-api.component";
 import { RecipeManagerComponent } from "./components/recipe-manager/recipe-manager.component";
 import { HomeComponent } from "./components/home/home.component";
 
@@ -21,11 +20,6 @@ const routes: Routes = [
   {
     path: "profile",
     component: ProfileComponent,
-    canActivate: [AuthGuard],
-  },
-  {
-    path: "external-api",
-    component: ExternalApiComponent,
     canActivate: [AuthGuard],
   },
   {
