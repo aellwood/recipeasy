@@ -2,7 +2,7 @@
 
 This is a front-end SPA using the Angular framework. A live example of this project hosted on Netlify can be found [here](https://silly-mahavira-4f9bf8.netlify.app/).
 
-Accompanying API project can be found [here](https://github.com/aellwood/recipeasy-api).
+There is an accompanying API [repo](https://github.com/aellwood/recipeasy-api).
 
 ## Usage
 
