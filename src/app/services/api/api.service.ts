@@ -6,22 +6,22 @@ import { Observable } from "rxjs";
   providedIn: "root",
 })
 export class ApiService {
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   getRecipes(): Observable<any> {
-    return this.http.get("https://recipeasy-api.azurewebsites.net/api/recipes");
+    return this.http.get("https://recipeasy-api.herokuapp.com/api/recipes");
   }
 
   postRecipe(body: any): Observable<any> {
     return this.http.post(
-      "https://recipeasy-api.azurewebsites.net/api/recipes",
+      "https://recipeasy-api.herokuapp.com/api/recipes",
       body
     );
   }
 
   deleteRecipe(id: string): Observable<any> {
     return this.http.delete(
-      `https://recipeasy-api.azurewebsites.net/api/recipes/${id}`
+      `https://recipeasy-api.herokuapp.com/api/recipes/${id}`
     );
   }
 }
